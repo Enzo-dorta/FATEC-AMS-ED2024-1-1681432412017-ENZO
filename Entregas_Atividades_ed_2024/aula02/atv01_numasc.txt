@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main(void){
+int l[5];
+int i;
+int k;
+int j;
+
+  for (i = 0; i < 5; ++i) 
+  {
+    printf("%d numero:",i+1);
+    scanf("%d", &l[i]);
+
+  }
+  
+for (i=0;i<6;i++)
+{
+  for (j=i+1;j<6;j++){
+    if (l[i]>l[j])
+    {
+      k=l[i];
+      l[i]=l[j];
+      l[j]=k; 
+    }
+  }
+  printf ("%d\n", l[i]);
+}
+    return 0;
+}
