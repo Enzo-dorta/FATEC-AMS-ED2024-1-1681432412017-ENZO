@@ -1,0 +1,44 @@
+#include <stdbool.h>
+#include <stdio.h>
+
+float preco(float* ponteiro_preco_ini, float preco_desc, float preco_ini) 
+ {
+   preco_desc = (*ponteiro_preco_ini * preco_desc / 100); 
+   int preco_final = *ponteiro_preco_ini - preco_desc;
+   printf("O preço do produto é: %.2f\n",preco_ini);
+   printf("O preço do desconto é: %.2f\n", preco_desc);
+   printf("O preço final do produto é: %d\n", preco_final);
+   
+   return preco_final;
+ }
+
+int main() {
+  float preco_ini;
+  float preco_desc;
+  int i;
+
+  printf("Insira o valor do produto:");
+  scanf("%f", &preco_ini);
+  float* ponteiro_preco_ini = &preco_ini;
+
+  printf("Qual a porcentagem de desconto do produto: ");
+  scanf("%f", &preco_desc);
+  float* ponteiro_preco_desc = &preco_desc;
+
+  for (i=0;i<4; i++){
+  if (preco_desc > 70){
+    printf("O desconto não pode ser maior que 70 coloque um valor válido");
+    scanf("%f", &preco_desc);
+    float* ponteiro_preco_desc = &preco_desc;
+    }
+    else{
+      i=4;
+    }
+} 
+  
+
+  preco(ponteiro_preco_ini,preco_desc,preco_ini);
+
+  return 0;
+}
+
