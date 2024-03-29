@@ -1,0 +1,55 @@
+/*------------------------------------------------------------------------*/
+/*   FATEC-São Caetano do Sul                 Estrutura de Dados          */
+/*                         Enzo DOrta S. Brito                            */
+/*             Objetivo:   Impressão da sequencia do array                */
+/*             Paradigama: - programação linear                           */
+/*                                                                        */
+/*                                                         Data:18/03/2024*/
+/*------------------------------------------------------------------------*/ 
+
+
+
+
+#include <stdio.h>
+int ordenar(int *ptr_array, int i, int k, int j)
+{ 
+  for (i=0;i<5;i++)
+  {
+    for (j=i+1;j<5;j++){
+      if (ptr_array[i]>ptr_array[j])
+      {
+        k=ptr_array[i];
+        ptr_array[i]=ptr_array[j];
+        ptr_array[j]=k; 
+      }
+    }
+    printf ("a sequencia certa é:");
+    printf ("%d\n", ptr_array[i]);
+  }
+  return 1;
+}
+
+int imprimir (int l[], int * ptr_array){
+  int imprimir = *ptr_array;
+  for (int i=0;i<5;i++){
+    imprimir = l[i];
+    printf ("%d\n", imprimir);
+  }
+  return imprimir;
+}
+
+int main(void){
+int l[5];
+int i, k, j;
+int * ptr_array;
+  
+  for (i = 0; i <5; ++i) 
+  {
+    printf("%d numero:",i+1);
+    scanf("%d", &l[i]);
+  }
+  imprimir(l, ptr_array);
+  ordenar(l,i,k,j);
+  
+
+}

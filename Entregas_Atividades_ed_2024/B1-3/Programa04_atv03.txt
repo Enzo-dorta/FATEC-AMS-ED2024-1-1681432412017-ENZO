@@ -1,0 +1,67 @@
+/*------------------------------------------------------------------------*/
+/*   FATEC-São Caetano do Sul                 Estrutura de Dados          */
+/*                         Enzo DOrta S. Brito                            */
+/*             Objetivo:   multiplicando sequencia do array               */
+/*             Paradigama: - programação linear                           */
+/*                                                                        */
+/*                                                         Data:18/03/2024*/
+/*------------------------------------------------------------------------*/ 
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int ordenar(int *ptr_array, int i, int k, int j)
+{ 
+  for (i=0;i<5;i++)
+  {
+    for (j=i+1;j<5;j++){
+      if (ptr_array[i]>ptr_array[j])
+      {
+        k=ptr_array[i];
+        ptr_array[i]=ptr_array[j];
+        ptr_array[j]=k; 
+      }
+    }
+    printf ("a sequencia certa é:");
+    printf ("%d\n", ptr_array[i]);
+  }
+  return 0;
+}
+
+int multiplicar(int i, int * ptr_array, int multiplo)
+{
+
+  for(i=0;i<5;i++)
+  {
+     ptr_array[i] = ptr_array[i] * multiplo;
+  
+    printf ("o numero multiplicado:");
+    printf ("%d\n", ptr_array[i]);
+  }
+
+  return 0;
+}
+
+int main(void){
+int l[5];
+int i, k, j;
+int * ptr_array;
+int multiplo;
+
+  printf("digite o numero que multiplicara a sequencia:\n");
+  scanf("%d", &multiplo);
+  
+  for (i = 0; i <5; ++i) 
+  {
+    printf("%d numero:",i+1);
+    scanf("%d", &l[i]);
+  }
+  
+
+  ordenar(l,i,k,j);
+  multiplicar(i, l, multiplo);
+}
+
