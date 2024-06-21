@@ -1,3 +1,8 @@
+/*    Enzo Dorta Stevanato de Brito        profº Verissimo
+      Estrutura de Dados                    13/05/2024
+      Fatec Antonio Russo                    SCS,SP*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
