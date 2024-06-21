@@ -1,0 +1,3 @@
+professor, este codigo eu realizei com suporte de amigos, não é a ideia original, mas acredito que seja preciso algo para ser avaliado , 
+o meu codigo que eu tive que passar pleo senhor estarei colocando em uma pasta separada
+dentro dese mesmo repositori, eu fui mais arrojado em tentar um codigo diferente do que só  certo nesta atividade e estou tentando resolve-lo
