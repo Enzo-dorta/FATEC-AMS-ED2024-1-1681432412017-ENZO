@@ -8,6 +8,13 @@ tam_familia = int(input("Digite o tamanho da sua familia: "))
 familia = {}
 familia_ordem={}
 
+vermelho = '\033[31m'
+verde = '\033[32m'
+azul = '\033[34m'
+pink ='\033[1;35m'
+
+reset = '\033[0;0m'
+
 for i in range (tam_familia):
     nome = str(input(f"digite o nome do {i+1}º integrante: "))
     idade = int(input("digite  idade dele: "))
@@ -30,23 +37,26 @@ for i in range(len(lista_familia)):
 
             diferenca = idade_now - idade_next
 
-            if diferenca > 15 and diferenca <= 50:
-                print(Fore.BLUE + nome_now + " e " + nome_next + f" podem ser pai/mãe e filho(a). diferença {diferenca}")
+            if diferenca > 15 and diferenca < 50:
+                print( vermelho + nome_now + reset + " pode ser pai/mãe de " + nome_next )
 
-            if diferenca < -15 and diferenca >= -50:
-                print(Fore.BLUE + nome_now + " e " + nome_next + f" podem ser pai/mãe e filho(a). diferença {diferenca}")
+            if diferenca < -15 and diferenca > -50:
+                print( vermelho + nome_now + reset + " pode ser filho(a) de " + nome_next)
 
             if diferenca <= 15 and diferenca >= -15:
-                print(Fore.YELLOW + nome_now + " e " + nome_next + f" podem ser irmãos(ãs) ou casal . diferença {diferenca}")
+                print(pink + nome_now + reset + " e " + nome_next + " podem ser irmãos(ãs) ou casal")
 
-            if diferenca < -80 or diferenca > 80:
-                print(Fore.GREEN + nome_now + " e " + nome_next + f" podem ser bisavô(vó) e bisaneto(a)")
+            if diferenca <= -80:
+                print(azul + nome_now + reset + " pode ser bisneto(a) de " + nome_next )
             
-            if diferenca < 80 and diferenca > 50:
-                print(Fore.RED + nome_now + " e " + nome_next + f" podem ser avô(ó) e neto(a)")
+            if diferenca >= 80:
+                print( azul + nome_now + reset + " pode ser bisavô/vó de " + nome_next)
+            
+            if diferenca < 80 and diferenca >= 50:
+                print(verde + nome_now + reset + " pode ser avô/avó de " + nome_next)
 
-            if diferenca < -50 and diferenca > -80:
-                print(Fore.RED + nome_now + " e " + nome_next + f" podem ser avô(ó) e neto(a)")
+            if diferenca <=-50 and diferenca > -80:
+                print(verde + nome_now + reset + " pode ser neto(a) de " + nome_next)
 
             colorama.deinit()
 
